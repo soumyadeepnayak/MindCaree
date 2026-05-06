@@ -24,7 +24,7 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:3000',
     'https://mind-caree.vercel.app',
-    prprocess.env.CLIENT_URL?.replace(/\/$/, ''),
+     process.env.CLIENT_URL?.replace(/\/$/, ''),
   ].filter(Boolean),
   credentials: true,
 }))
