@@ -20,7 +20,12 @@ const PORT = process.env.PORT || 3000
 // Security middleware
 app.use(helmet())
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://mind-caree.vercel.app',
+    prprocess.env.CLIENT_URL?.replace(/\/$/, ''),
+  ].filter(Boolean),
   credentials: true,
 }))
 
